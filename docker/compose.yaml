@@ -1,0 +1,9 @@
+services:
+  dotfiles:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - /Users/jgminder/Code/dotfiles:/home/jgminder/dotfiles
+    stdin_open: true
+    tty: true
