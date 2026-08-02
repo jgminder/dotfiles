@@ -1,0 +1,13 @@
+# font-family = "SF Mono Powerline"
+# font-size = 14
+
+# font-family = "UbuntuMono Nerd Font Mono"
+# font-size = 18
+
+font-family = "MesloLGSDZ Nerd Font Mono"
+font-size = 15
+
+font-thicken = true
+
+# theme = Catppuccin Mocha
+theme = GitHub Dark Default
