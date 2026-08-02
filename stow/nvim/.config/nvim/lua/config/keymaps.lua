@@ -3,7 +3,7 @@
 -- route through vim-tmux-navigator instead of plain <C-w>h/j/k/l.
 local map = vim.keymap.set
 
-map("n", "<C-h>", "<cmd><C-U>TmuxNavigateLeft<cr>", { desc = "Go to Left Window" })
-map("n", "<C-j>", "<cmd><C-U>TmuxNavigateDown<cr>", { desc = "Go to Lower Window" })
-map("n", "<C-k>", "<cmd><C-U>TmuxNavigateUp<cr>", { desc = "Go to Upper Window" })
-map("n", "<C-l>", "<cmd><C-U>TmuxNavigateRight<cr>", { desc = "Go to Right Window" })
+map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Go to Left Window" })
+map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Go to Lower Window" })
+map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Go to Upper Window" })
+map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Go to Right Window" })
