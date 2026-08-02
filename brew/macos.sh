@@ -35,9 +35,9 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/bootstrap.sh"
 
 echo "Installing macOS Homebrew formulae..."
-if [[ ${#FORMULAE[@]} -gt 0 ]]; then
-  brew install "${FORMULAE[@]}"
-fi
+for formula in "${FORMULAE[@]}"; do
+  brew install "$formula" || echo "Warning: failed to install formula '$formula' (see above); continuing"
+done
 
 echo ""
 echo "Done!"

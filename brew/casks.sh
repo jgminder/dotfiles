@@ -31,9 +31,9 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/bootstrap.sh"
 
 echo "Installing Homebrew casks..."
-if [[ ${#CASKS[@]} -gt 0 ]]; then
-  brew install --cask "${CASKS[@]}"
-fi
+for cask in "${CASKS[@]}"; do
+  brew install --cask "$cask" || echo "Warning: failed to install cask '$cask' (see above); continuing"
+done
 
 echo ""
 echo "Done!"
