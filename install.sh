@@ -41,6 +41,12 @@ rmdir "$BACKUP_DIR" 2>/dev/null || echo "Conflicting files backed up to $BACKUP_
 echo "Linking dotfiles with stow..."
 stow --dir="$DOTFILES_DIR/stow" --target="$HOME" --restow zsh nvim tmux ghostty
 
+# Ghostty (the terminal this is normally driven from) sets TERM=xterm-ghostty,
+# which most remote systems - VMs, containers - don't have a terminfo entry
+# for. Install it into ~/.terminfo (checked before the system terminfo db) so
+# tmux/nvim don't break when connected to from a real Ghostty terminal.
+tic -x -o "$HOME/.terminfo" "$DOTFILES_DIR/terminfo/xterm-ghostty.terminfo"
+
 # TPM comes from the tpm brew formula (see brew/formulae.sh) rather than a
 # git clone; it reads plugins from the stowed .tmux.conf, so it must run
 # after stow above.
