@@ -4,20 +4,26 @@ set -euo pipefail
 FORMULAE=(
   awscli
   bat
+  cmake
   eza
   fd
   flex
   fzf
+  gh
   git
   gradle
   herdr
+  hunk
+  jj
   lazygit
   maven
   neovim
   opencode
+  rust
   starship
   stow
   tmux
+  tpm
   tree
   tree-sitter-cli
   uv

@@ -11,7 +11,7 @@ CASKS=(
   chatgpt
   claude
   claude-code
-  docker
+  docker-desktop
   font-hack-nerd-font
   font-jetbrains-mono-nerd-font
   font-meslo-lg-nerd-font
@@ -19,8 +19,11 @@ CASKS=(
   font-sf-mono-nerd-font-ligaturized
   font-ubuntu-mono-nerd-font
   ghostty
+  jellyfin
   microsoft-teams
+  qbittorrent
   rectangle
+  slack
   visual-studio-code
 )
 
