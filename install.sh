@@ -13,10 +13,13 @@ fi
 eval "$("$BREW_BIN" shellenv)"
 
 # LazyVim starter isn't tracked in this repo since it's unmodified upstream;
-# stow only overlays our plugin config (stow/nvim/.config/nvim/lua/plugins) on top.
+# stow only overlays our config (stow/nvim/.config/nvim/lua) on top. Starter
+# ships placeholder stub files at some of those same paths, so remove ours'
+# targets first or stow can't replace them with symlinks.
 if [[ ! -d "$HOME/.config/nvim" ]]; then
   git clone https://github.com/LazyVim/starter "$HOME/.config/nvim"
   rm -rf "$HOME/.config/nvim/.git"
+  rm -f "$HOME/.config/nvim/lua/config/keymaps.lua"
 fi
 
 echo "Linking dotfiles with stow..."
